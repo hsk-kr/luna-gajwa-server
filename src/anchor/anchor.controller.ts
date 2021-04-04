@@ -48,8 +48,6 @@ export class AnchorController {
         walletAddress,
       );
 
-      console.log(collateralValue);
-
       if (collateralValue === null) throw new Error('There is no the wallet');
 
       return {
