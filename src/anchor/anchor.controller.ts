@@ -9,7 +9,7 @@ import { AnchorService } from './anchor.service';
 
 // Interfaces
 import {
-  GetYearApyResponse,
+  GetApyResponse,
   GetCollateralValueResponse,
   GetBorrowedValueResponse,
   GetLtvResponse,
@@ -20,13 +20,13 @@ import {
 export class AnchorController {
   constructor(private anchorService: AnchorService) {}
 
-  @Get('year_apr')
-  async getYearApy(): Promise<GetYearApyResponse | ErrorResponse> {
+  @Get('apy')
+  async getApy(): Promise<GetApyResponse | ErrorResponse> {
     try {
-      const yearApy: number = await this.anchorService.getYearApy();
+      const apy: number = await this.anchorService.getApy();
 
       return {
-        yearApy,
+        apy,
       };
     } catch (error) {
       throw new HttpException(

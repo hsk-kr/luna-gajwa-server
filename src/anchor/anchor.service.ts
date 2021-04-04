@@ -6,12 +6,12 @@ import { AnchorLibProvider } from './anchorlib.provider';
 export class AnchorService {
   constructor(private anchorLibProvider: AnchorLibProvider) {}
 
-  async getYearApy(): Promise<number> {
-    const yearApy = await this.anchorLibProvider.anchor.earn.getAPY({
+  async getApy(): Promise<number> {
+    const apy = await this.anchorLibProvider.anchor.earn.getAPY({
       market: MARKET_DENOMS.UUSD,
     });
 
-    return yearApy;
+    return apy;
   }
 
   async getCollateralValue(walletAddress: string): Promise<number | null> {

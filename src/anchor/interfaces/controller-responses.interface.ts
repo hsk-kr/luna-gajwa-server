@@ -2,8 +2,8 @@ export interface ErrorResponse {
   error: string;
 }
 
-export interface GetYearApyResponse {
-  yearApy: number;
+export interface GetApyResponse {
+  apy: number;
 }
 
 export interface GetCollateralValueResponse {

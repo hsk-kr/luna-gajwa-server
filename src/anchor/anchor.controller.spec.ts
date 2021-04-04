@@ -24,15 +24,13 @@ describe('AnchorController', () => {
     expect(anchorService).toBeDefined();
   });
 
-  describe('getYearApy', () => {
-    it('returned value should have a property yearApy', async () => {
-      const yearApy = 1;
-      jest
-        .spyOn(anchorService, 'getYearApy')
-        .mockImplementation(async () => yearApy);
+  describe('getApy', () => {
+    it('returned value should have a property apy', async () => {
+      const apy = 1;
+      jest.spyOn(anchorService, 'getApy').mockImplementation(async () => apy);
 
-      expect(await anchorController.getYearApy()).toMatchObject({
-        yearApy,
+      expect(await anchorController.getApy()).toMatchObject({
+        apy,
       });
     });
   });

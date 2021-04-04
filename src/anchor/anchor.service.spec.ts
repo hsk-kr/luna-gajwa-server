@@ -20,9 +20,9 @@ describe('AnchorService', () => {
     expect(anchorService).toBeDefined();
   });
 
-  describe('getYearApy', () => {
+  describe('getApy', () => {
     it('should return number', async () => {
-      expect(typeof (await anchorService.getYearApy())).toBe('number');
+      expect(typeof (await anchorService.getApy())).toBe('number');
     });
   });
 
