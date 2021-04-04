@@ -34,9 +34,48 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Deploy with Docker
+
+1. Create a file `.env` then set environment variables in the file
+   ```
+   API_SERVER_PORT=[API Server Port Number]
+   ```
+2. Run commands
+   ```bash
+   $ docker-compose build --no-cache
+   $ docker-compose up -d
+   ```
+
+## Redeploy with Docker after changing source code
+
+1. Down the container
+
+   ```bash
+   $ docker-compose down
+   ```
+
+2. Remove a volume of the server container
+
+   ```bash
+   $ docker volume rm luna-gajwa-server_webapp
+   ```
+
+   you can check the volume name through a command 'docker volume ls'.
+
+3. Build
+
+   ```bash
+   $ docker-compose build --no-cache
+   ```
+
+4. Up the container
+   ```bash
+   $ docker-compose up -d
+   ```
+
 ## APIs
 
-### **GET /anchor/year_apy**
+### **GET /anchor/apy**
 
 Returns an APY of the anchor
 
@@ -45,7 +84,7 @@ Returns an APY of the anchor
   - Response
     ```javascript
     {
-      yearApy: [number];
+      apy: [number];
     }
     ```
 - Bad Request
